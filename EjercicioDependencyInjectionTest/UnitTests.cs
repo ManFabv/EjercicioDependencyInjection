@@ -6,20 +6,20 @@ namespace Tests
     public class UnitTests
     {
         private Persona p;
-        private ICuenta c;
+        private const string TipoOro = "ORO";
 
         [SetUp]
         public void SetUp()
         {
-            c = new CuentaOro();
-            p = new Persona("Fabricio", c);
+            Contenedor.Registrar<CuentaOro>(TipoOro);
+            p = new Persona("Fabricio", Contenedor.Resolver<CuentaOro>(TipoOro));
         }
 
         [Test]
-        public void Test()
+        public void TestTipo()
         {
             var tipo = p.TipoDeCuenta();
-            Assert.That(tipo, Is.EqualTo("ORO"));
+            Assert.That(tipo, Is.EqualTo(TipoOro));
         }
     }
 }

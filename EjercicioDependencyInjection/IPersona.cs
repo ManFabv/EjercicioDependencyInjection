@@ -4,5 +4,6 @@
     {
         void Mostrar();
         string TipoDeCuenta();
+        string Nombre { get; }
     }
 }

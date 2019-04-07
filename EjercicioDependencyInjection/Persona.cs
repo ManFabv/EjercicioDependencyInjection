@@ -11,6 +11,8 @@
             _cuenta = cuenta;
         }
 
+        public string Nombre => _nombre;
+
         public void Mostrar() => _cuenta.MostrarPorConsolta();
 
         public string TipoDeCuenta() => _cuenta.TipoDeCuenta();
